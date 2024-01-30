@@ -22,7 +22,7 @@ public class ServidorUDP {
                 InetAddress clienteDireccion = receivePacket.getAddress();
                 int clientePuerto = receivePacket.getPort();
 
-                // Crea un nuevo hilo para manejar la solicitud del cliente
+                // Nuevo hilo para manejar la solicitud del cliente
                 Thread clienteThread = new ClienteHandler(socket, mensaje, clienteDireccion, clientePuerto);
                 clienteThread.start();
             }
